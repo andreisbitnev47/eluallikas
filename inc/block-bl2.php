@@ -1,0 +1,1 @@
+<article><div id='pageBody'><h2>Pöördu Jumala poole, Ta ootab sind.<h2><img src='pics/blocks/image.jpg'><p></p></div></article>
