@@ -164,7 +164,7 @@
 								foreach($albumArr as $row){
 								?>
 								<option value="<?=$row['id']?>"><?=$row['title']?></option>	
-								<? } ?>	
+								<?php } ?>	
 								</select>
 								<input type="submit" value="Добавить">
 							</form>	
@@ -263,7 +263,7 @@
 								foreach($albumArr as $row){
 								?>
 								<option value="<?=$row['id']?>"><?=$row['titleRus']?></option>	
-								<? } ?>	
+								<?php } ?>	
 								</select>
 								<input type="submit" value="Добавить">
 							</form>	

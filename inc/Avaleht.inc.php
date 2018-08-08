@@ -6,11 +6,11 @@
 			</nav>-->
 		</div>
 			<div id="lozung">
-				<? if($lang=='rus'){?>
+				<?php if($lang=='rus'){?>
 				<p>Начни первые шаги в новую жизнь вместе с нами</p>
-				<? }else{ ?>
+				<?php }else{ ?>
 				<p>Alusta oma esimesed sammud meiega</p>
-				<? } ?>
+				<?php } ?>
 			</div>
 	</div>
 </div>
@@ -43,4 +43,4 @@
 					<p><a href="<?=$_SERVER['PHP_SELF']?>?id=<?=$row['id']?>"><?=$row['descr']?></a></p>
 				</div>
 			</li>
-				<? } } ?>
+				<?php } } ?>

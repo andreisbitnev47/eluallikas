@@ -4,7 +4,7 @@
 					alt="logo" 
 					href="sammud.ee" 
 					title="logo">
-					<? if($lang=='rus'){?>
+					<?php if($lang=='rus'){?>
 					<section>
 					Начни новую жизнь<br>
 					<div>с Богом</div>
@@ -17,7 +17,7 @@
 					Свяжись с нами<br>
 					<div>info@eluallikas.ee</div>
 				</section>
-					<? }else{ ?>
+					<?php }else{ ?>
 				<section>
 					Alusta uus elu<br>
 					<div>Jumalaga</div>
@@ -30,7 +30,7 @@
 					Võta ühendust<br>
 					<div>info@eluallikas.ee</div>
 				</section>
-					<? } ?>
+					<?php } ?>
 			</div>
 			<div class="width">
 				<nav>
