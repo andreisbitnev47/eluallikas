@@ -39,13 +39,13 @@ if ($_SERVER[REQUEST_METHOD]=='GET'){
 		
 	</head>
 	<body>
-		<?
+		<?php
 		require ('inc/header.inc.php');
 		
 		?>
 			<div id="pageBody">
 				<div id="pageBackground">
-				<?= $errMsg;
+				<?php echo $errMsg;
 					if ($_SERVER[REQUEST_METHOD]=='GET'){
 								$navDir = $navigation->getOneDir($id);
 								$blockDir = $blocks->getOneDir($id);
@@ -89,11 +89,11 @@ if ($_SERVER[REQUEST_METHOD]=='GET'){
 				?>
 				</div>
 			</div>
-		<?
+		<?php
 		require ('inc/footer.inc.php')
 		?>
-		<form id="fotoSlider" action="<?=$_SERVER['PHP_SELF']?>" method='GET'><!--форма для переключения фотографий в альбоме через script-->
-			<input type="hidden" name='id' value="<?=$id?>">
+		<form id="fotoSlider" action="<?php echo $_SERVER['PHP_SELF']?>" method='GET'><!--форма для переключения фотографий в альбоме через script-->
+			<input type="hidden" name='id' value="<?php echo $id?>">
 		</form>
 		<script type="text/javascript">
 		function slider(){

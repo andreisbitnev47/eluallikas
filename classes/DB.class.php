@@ -1,6 +1,6 @@
-<?
+<?php
 	class DB{
-		const DB_NAME = "/home/estcomme/public_html/eluallikas.ee/sammud.db";
+		const DB_NAME = "/var/www/html/eluallikas/sammud.db";
 		protected $_db;
 
 		function __construct(){
@@ -74,4 +74,3 @@
 		}
 		
 	}
-?>

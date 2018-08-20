@@ -1,4 +1,4 @@
-<?
+<?php
 class content extends DB{
 	function __construct(){
 			parent::__construct();
@@ -119,4 +119,3 @@ class content extends DB{
 	}
 
 }
-?>

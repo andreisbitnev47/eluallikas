@@ -1,4 +1,4 @@
-<?
+<?php
 	class slider extends DB{
 		function addSlide($title){
 			try{
@@ -37,4 +37,3 @@
 			}
 		}
 	}
-?>

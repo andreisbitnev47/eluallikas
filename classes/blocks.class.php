@@ -1,4 +1,4 @@
-<?
+<?php
 	class blocks extends DB{
 		function __construct(){
 			parent::__construct();
@@ -113,4 +113,3 @@
 			}
 		}
 	}
-?>

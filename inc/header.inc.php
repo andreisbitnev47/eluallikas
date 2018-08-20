@@ -35,28 +35,28 @@
 			<div class="width">
 				<nav>
 					<ul>
-						<?
+						<?php
 							if (!is_array($navDir))
 								$errMsg = "Ошибка при выводе меню";
 							foreach ($navDir as $row){
 								if ($lang == "rus"){
 						?>
-									<li><a href="<?=$_SERVER['PHP_SELF']?>?id=<?=$row['id']?>"><?=$navigation->addBlanks($row['titleRus'])?></a></li>
-						<?
+									<li><a href="<?php echo $_SERVER['PHP_SELF']?>?id=<?php echo $row['id']?>"><?php echo $navigation->addBlanks($row['titleRus'])?></a></li>
+						<?php
 								}else{
 						?>
-									<li><a href="<?=$_SERVER['PHP_SELF']?>?id=<?=$row['id']?>"><?=$navigation->addBlanks($row['title'])?></a></li>
-						<?			
+									<li><a href="<?php echo $_SERVER['PHP_SELF']?>?id=<?php echo $row['id']?>"><?php echo $navigation->addBlanks($row['title'])?></a></li>
+						<?php			
 								}
 							}
 							
 						?>
 					</ul>
 					<div id='est'>
-						<a href="<?= $_SERVER['PHP_SELF']?>?id=<?=$id?>&lang=est"><img src="pics/flags/est.png"></a>
+						<a href="<?php echo  $_SERVER['PHP_SELF']?>?id=<?php echo $id?>&lang=est"><img src="pics/flags/est.png"></a>
 					</div>
 					<div id='rus'>
-						<a href="<?= $_SERVER['PHP_SELF']?>?id=<?=$id?>&lang=rus"><img src="pics/flags/rus.png"></a>
+						<a href="<?php echo  $_SERVER['PHP_SELF']?>?id=<?php echo $id?>&lang=rus"><img src="pics/flags/rus.png"></a>
 					</div>
 				</nav>
 			</div>
