@@ -1,4 +1,4 @@
-<?
+<?php
 	header('Content-Type: text/html; charset=utf-8');
 	function __autoload($class){
 			include '../classes/'. $class . '.class.php';
@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 	
-<?	
+<?php	
 	if ($_SERVER[REQUEST_METHOD]=='POST'){
 		$pageName = $content->clearStr($_POST['title']);
 		$id = $content->clearStr($_POST['id']);
@@ -22,7 +22,7 @@
 
 ?>
 		<head>
-			<title>Редактор альбома <?=$pageName?></title>
+			<title>Редактор альбома <?php echo $pageName?></title>
 			<style>
 				body {width: 1000px;
 					background: white;
@@ -35,13 +35,13 @@
 			</style>
 		</head>
 		<body>
-			<h1>Фотографии альбома "<?=$pageName?>"</h1>
+			<h1>Фотографии альбома "<?php echo $pageName?>"</h1>
 			<a href='albums.php'>Назад к альбомам</a><br>
 			
 			<div id="form_1"><h3>Добавить новую фотографию</h3>
 							<form action="saveFotos.php" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="pageName" value="<?=$pageName?>">
-								<input type="hidden" name="pageId" value="<?=$id?>">
+								<input type="hidden" name="pageName" value="<?php echo $pageName?>">
+								<input type="hidden" name="pageId" value="<?php echo $id?>">
 								Заглавие : <input type="text" name="title"><br>
 								Заглавие рус: <input type="text" name="titleRus"><br>
 								Краткое описание/комментарий: <input type="text" name="descr"><br>
@@ -52,7 +52,7 @@
 							<br>
 			</div>
 			<ul>
-<?
+<?php
 		$res = $content->getDivs($id);
 		if (!is_array($res)){
 			$errMsg = "Произошла ошибка при выводе содержимого страницы";
@@ -61,8 +61,8 @@
 		else{
 			foreach($res as $row){
 ?>		
-		<div class="content"><li><?=$row['id']?>. <?=$row['content']?><a href="deleteFoto.php?id=<?=$row['id']?>&pageName=<?=$pageName?>&pageId=<?=$id?>">Удалить</a></li></div>
-	<?
+		<div class="content"><li><?php echo $row['id']?>. <?php echo $row['content']?><a href="deleteFoto.php?id=<?php echo $row['id']?>&pageName=<?php echo $pageName?>&pageId=<?php echo $id?>">Удалить</a></li></div>
+	<?php
 			}
 		}
 			echo "</ul>";

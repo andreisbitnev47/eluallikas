@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-Type: text/html; charset=utf-8');
 function __autoload($class){
 		include '../classes/'. $class . '.class.php';
@@ -15,7 +15,7 @@ $errMsg="";
 		<h1>Страницы сайта (отображаются сверху справа в навигации)</h1>
 		<a href='index.php'>Назад в Админку</a>
 <ul>
-	<?
+	<?php
 		$navigation = new nav;
 		$navDir = $navigation->getDir();
 		if (!is_array($navDir))
@@ -24,16 +24,16 @@ $errMsg="";
 			$errMsg = "В меню нет директорий";
 		foreach ($navDir as $row){
 	?>
-	<li><?=$row['id']?>. <?= $row['title']?> / <?= $row['titleRus']?> <a href="deleteNavDir.php?id=<?=$row['id']?>">Удалить</a> 
+	<li><?php echo $row['id']?>. <?php echo  $row['title']?> / <?php echo  $row['titleRus']?> <a href="deleteNavDir.php?id=<?php echo $row['id']?>">Удалить</a> 
 		<form method="POST" action="translateNavDir.php">
-		<input type="hidden" name="id" value='<?= $row['id']?>'>
+		<input type="hidden" name="id" value='<?php echo  $row['id']?>'>
 		<input type="text" name="titleRus">
 		<input type="submit"  value='Перевести название страницы'></form></li>
 		
 		<form method="POST" action="content.php">
-		<input type="hidden" name="title" value='<?= $row['title']?>'>
+		<input type="hidden" name="title" value='<?php echo  $row['title']?>'>
 		<input type="submit"  value='Изменить'></form></li>
-	<?
+	<?php
 		}
 		echo "</ul>";
 		echo $errMsg;

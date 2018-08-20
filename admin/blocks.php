@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-Type: text/html; charset=utf-8');
 function __autoload($class){
 		include '../classes/'. $class . '.class.php';
@@ -26,7 +26,7 @@ $errMsg="";
 	<body>
 		<h1>Блоки сайта</h1>
 		<a href='index.php'>Назад в админку<a/>
-	<?
+	<?php
 		$blocks = new blocks;
 		$blockDir = $blocks->getBlocks();
 		if (!is_array($blockDir))
@@ -36,30 +36,30 @@ $errMsg="";
 		echo "<ul>";
 		foreach ($blockDir as $row){
 	?>
-	<div class="block"><li><h3><?=$row['id']?>. <?= $row['title']?>/<?= $row['titleRus']?></h3>
+	<div class="block"><li><h3><?php echo $row['id']?>. <?php echo  $row['title']?>/<?php echo  $row['titleRus']?></h3>
 	
 	<form action="translateBlockTitle.php" method="POST">
-		<input type="hidden" name="blockId" value="<?=$row['id']?>">
+		<input type="hidden" name="blockId" value="<?php echo $row['id']?>">
 		Название по русски: <input type="text" name="titleRus">
 		<input type="submit" value="Перевести">
 	</form>
 	
-	<img src="../pics/blocks/<?=unserialize($row['img'])?>"><br>
-	<span>Краткое описание:</span><p><?=$row['descr']?></p><p><?=$row['descrRus']?></p>
+	<img src="../pics/blocks/<?php echo unserialize($row['img'])?>"><br>
+	<span>Краткое описание:</span><p><?php echo $row['descr']?></p><p><?php echo $row['descrRus']?></p>
 	
 	<form action="translateBlockDescr.php" method="POST">
-		<input type="hidden" name="blockId" value="<?=$row['id']?>">
+		<input type="hidden" name="blockId" value="<?php echo $row['id']?>">
 		Описание на русском: <br><textarea cols="30" rows="7" name="descrRus"></textarea><br>
 		<input type="submit" value="Перевести">
 	</form>
 	
 	<form action="content.php" method="POST">
-		<input type="hidden" name="title" value="<?= $row['id']?>">
+		<input type="hidden" name="title" value="<?php echo  $row['id']?>">
 		<input type="submit" value="Изменить содержимое страницы">
 	</form><br>
 	
-	<a href="deleteBlockDir.php?id=<?=$row['id']?>">Удалить блок</a></li></div>
-	<?
+	<a href="deleteBlockDir.php?id=<?php echo $row['id']?>">Удалить блок</a></li></div>
+	<?php
 		}
 		echo "</ul>";
 		echo $errMsg;

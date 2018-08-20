@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-Type: text/html; charset=utf-8');
 function __autoload($class){
 		include '../classes/'. $class . '.class.php';
@@ -14,7 +14,7 @@ $errMsg="";
 		<h1>Фотоальбомы</h1>
 		<a href='index.php'>Назад в админку</a>
 <ul>
-	<?
+	<?php
 		$albums = new album;
 		$album = $albums->getDir();
 		$albumCnt = $albums->albumCnt();
@@ -24,18 +24,18 @@ $errMsg="";
 			$errMsg = "Не создано ни одного альбома";
 		foreach ($album as $row){
 	?>
-	<li><?=$row['id']?>. <?= $row['title']?>/<?= $row['titleRus']?> <a href="deleteAlbum.php?id=<?=$row['id']?>">Удалить</a>
+	<li><?php echo $row['id']?>. <?php echo  $row['title']?>/<?php echo  $row['titleRus']?> <a href="deleteAlbum.php?id=<?php echo $row['id']?>">Удалить</a>
 		
 		<form method="POST" action="translateAlbumTitle.php">
-			<input type="hidden" name="id" value="<?= $row['id']?>">
+			<input type="hidden" name="id" value="<?php echo  $row['id']?>">
 			Русское название<input type="text" name="titleRus">
 		<input type="submit"  value='Перевести'></form></li>
 		
 		<form method="Post" action="fotos.php">
-			<input type="hidden" name="title" value="<?= $row['title']?>">
-			<input type="hidden" name="id" value="<?= $row['id']?>">
+			<input type="hidden" name="title" value="<?php echo  $row['title']?>">
+			<input type="hidden" name="id" value="<?php echo  $row['id']?>">
 		<input type="submit"  value='Добавить фотографии'></form></li>
-	<?
+	<?php
 		}
 		echo "</ul>";
 		echo $errMsg;

@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-Type: text/html; charset=utf-8');
 function __autoload($class){
 		include '../classes/'. $class . '.class.php';
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	</head>
 	<body>
 		<h1>Картинки слайдера</h1>
-<?
+<?php
 	include "getSlides.php";
 	echo $errMsg;
 ?>
