@@ -15,7 +15,7 @@
 				</section>
 				<section>
 					Свяжись с нами<br>
-					<div>eluallikas@gmail.com</div>
+					<div class="email">eluallikas@gmail.com</div>
 				</section>
 					<?php }else{ ?>
 				<section>
@@ -28,7 +28,7 @@
 				</section>
 				<section>
 					Võta ühendust<br>
-					<div>eluallikas@gmail.com</div>
+					<div class="email">eluallikas@gmail.com</div>
 				</section>
 					<?php } ?>
 			</div>
