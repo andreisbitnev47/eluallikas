@@ -21,7 +21,7 @@
 		$tmp = $_FILES['uploaded_image']['tmp_name'];
 		$name = $_FILES['uploaded_image']['name'];
 		move_uploaded_file($tmp, '../pics/pagePics/'.$name);
-		$src = 'http://eluallikas.ee/pics/pagePics/'.$name;
+		$src = 'http://sammudvabadusse.ee/pics/pagePics/'.$name;
 		}
 		$res = $content->createDirDB($id);
 		if (!$res ){

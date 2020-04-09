@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Adminka"
-AuthUserFile "/home/estcomme/.htpasswds/public_html/eluallikas.ee/admin/passwd"
+AuthUserFile "/home/estcomme/.htpasswds/public_html/sammudvabadusse.ee/admin/passwd"
 require valid-user

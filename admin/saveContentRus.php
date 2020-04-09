@@ -34,8 +34,8 @@
 			$tmp = $_FILES['uploaded_image']['tmp_name'];
 			$name = $_FILES['uploaded_image']['name'];
 			move_uploaded_file($tmp, '../pics/pagePics/'.$name);
-			$src = 'http://eluallikas.ee/pics/pagePics/'.$name;
-			$imgParam = getImagesize ("http://eluallikas.ee/pics/pagePics/$name");
+			$src = 'http://sammudvabadusse.ee/pics/pagePics/'.$name;
+			$imgParam = getImagesize ("http://sammudvabadusse.ee/pics/pagePics/$name");
 			$width = $imgParam[0];
 			if ($width > 950){
 				$width = 950;
@@ -69,7 +69,7 @@
 			case "albumRus": $oneAlbum = $albums->getOneDir($albumDir);
 							$title = $oneAlbum[0]['titleRus'];
 							$src = $oneAlbum[0]['src'];
-							$finInput = '<a href=\'http://eluallikas.ee/index.php?id='.$albumDir.'\'><div class=\'album\'><h3>'.$title.'</h3><div class=\'albumFront\' style=\'background-image: url('.$src.');background-size:cover\'></div></div></a>';break;
+							$finInput = '<a href=\'http://sammudvabadusse.ee/index.php?id='.$albumDir.'\'><div class=\'album\'><h3>'.$title.'</h3><div class=\'albumFront\' style=\'background-image: url('.$src.');background-size:cover\'></div></div></a>';break;
 			case "copyRus": $finInput = $content->getContentById($id, $pageName);break;
 		}
 		$finInput = $content->escapeStr($finInput);

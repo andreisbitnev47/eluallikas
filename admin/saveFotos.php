@@ -28,8 +28,8 @@
 		$tmp = $_FILES['uploaded_image']['tmp_name'];
 		$name = $_FILES['uploaded_image']['name'];
 		move_uploaded_file($tmp, '../pics/fotos/'.$name);
-		$src = 'http://eluallikas.ee/pics/fotos/'.$name;
-		$imgParam = getImagesize ("http://eluallikas.ee/pics/fotos/$name");
+		$src = 'http://sammudvabadusse.ee/pics/fotos/'.$name;
+		$imgParam = getImagesize ("http://sammudvabadusse.ee/pics/fotos/$name");
 		$w= $imgParam[0];
 		if ($w > 900) //image max-width in css is set to 900 px
 			$w = 900;
@@ -49,7 +49,7 @@
 			exit;
 		}
 		
-		$finInput = '<a href=\'http://eluallikas.ee/index.php?id='.$id.'\'><div class=\'albumFoto\' style=\'background-image: url(http://eluallikas.ee/pics/fotos/'.$name.'); background-size:cover;\'></div></a>';//отображение на странице альбома
+		$finInput = '<a href=\'http://sammudvabadusse.ee/index.php?id='.$id.'\'><div class=\'albumFoto\' style=\'background-image: url(http://sammudvabadusse.ee/pics/fotos/'.$name.'); background-size:cover;\'></div></a>';//отображение на странице альбома
 	
 		$finInput = $content->escapeStr($finInput);
 		$res=$content->saveContent($id, $finInput, $pageId);
@@ -66,7 +66,7 @@
 			echo 'Произошла ошибка при добавлении информации в альбом id='.$id.'pagename='.$pageId;
 			exit;
 		}
-		$finInput = '<div class=\'foto\' style=\'width:'.$width.'\'><h2>'.$title.'</h2><a href=\'javascript:slider()\'><img src=\'http://eluallikas.ee/pics/fotos/'.$name.'\'></a><p>'.$descr.'</p></div>';//отображение фотки 
+		$finInput = '<div class=\'foto\' style=\'width:'.$width.'\'><h2>'.$title.'</h2><a href=\'javascript:slider()\'><img src=\'http://sammudvabadusse.ee/pics/fotos/'.$name.'\'></a><p>'.$descr.'</p></div>';//отображение фотки 
 		$finInput = $content->escapeStr($finInput);
 		$res=$content->saveContent($id , $finInput, $id);
 		if (!$res){
@@ -76,7 +76,7 @@
 		}else{
 			header ("Location: fotos.php?title=$pageName&id=$pageId");
 		}
-		$finInput = '<div class=\'foto\' style=\'width:'.$width.'\'><h2>'.$titleRus.'</h2><a href=\'javascript:slider()\'><img src=\'http://eluallikas.ee/pics/fotos/'.$name.'\'></a><p>'.$descrRus.'</p></div>';//отображение фотки 
+		$finInput = '<div class=\'foto\' style=\'width:'.$width.'\'><h2>'.$titleRus.'</h2><a href=\'javascript:slider()\'><img src=\'http://sammudvabadusse.ee/pics/fotos/'.$name.'\'></a><p>'.$descrRus.'</p></div>';//отображение фотки 
 		$finInput = $content->escapeStr($finInput);
 		$res=$content->saveContentRus($id , $finInput, $id);
 		if (!$res){
