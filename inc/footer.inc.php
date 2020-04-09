@@ -6,7 +6,7 @@
 				</div>
 				<div id = "block2">
 					<h2>Контакт</h2>
-					<p>Sammud vabadusee MTÜ<br>Код регистрации: 80372661<br>e-mail: info@eluallikas.ee<br>тел. +372 58553351<br></p>
+					<p>Sammud vabadusee MTÜ<br>Код регистрации: 80372661<br>e-mail: eluallikas@gmail.com<br>тел. +372 58553351<br></p>
 				</div>
 			<?php }else{ ?>
 				<div id = "block1">
@@ -15,7 +15,7 @@
 				</div>
 				<div id = "block2">
 					<h2>Kontakt</h2>
-					<p>Sammud vabadusee MTÜ<br>Registrikood: 80372661<br>e-mail: info@eluallikas.ee<br>tel. +372 58553351<br></p>
+					<p>Sammud vabadusee MTÜ<br>Registrikood: 80372661<br>e-mail: eluallikas@gmail.com<br>tel. +372 58553351<br></p>
 				</div>
 			<?php } ?>
 		</footer>
